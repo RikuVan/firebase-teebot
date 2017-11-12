@@ -1,0 +1,14 @@
+{
+  "config": {
+    "minMoves": 1,
+    "moveFraction": 2,
+    "implodeRadiusFraction": 2,
+    "explodeImplodeRatio": 0.8,
+    "randomMovement": false,
+    "randomTargeting": false,
+    "randomSpread": false,
+    "deterministic": false,
+    "verbose": false
+  },
+  "log": []
+}

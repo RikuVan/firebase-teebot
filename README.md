@@ -1,8 +1,25 @@
-# Firebase cloud function bot example
+# Firebase cloud function bot with Preact UI example
 
-Although this example uses Express and renders one 'log' view, Express is unnecessary for a single endpoint. However, the firebase console logs are awkward to use for more than very basic debugging, so this might be one way to log data. If you do want to render a view from the server, notice you will need to remove the index.html that comes with initialising hosting under 'public'. You will also need to change the firebase.json as in this example to render the function instead of the index.html. 
+This example uses Express and Preact to render 'config' and 'log' views, which can be useful since firebase logging is awkward for anything other than basic debugging.
 
-### Getting started
+For a easier version of this bot, checkout the first commit to this repo.
+
+This example also offers an endpoint 'https://battlecube-teebot.firebaseio.com/config' for changing bot parameters: .
+```json
+{
+  "minMoves": 1,
+  "moveFraction": 2,
+  "implodeRadiusFraction": 2,
+  "explodeImplodeRatio": 0.8,
+  "randomMovement": false,
+  "randomTargeting": false,
+  "randomSpread": false,
+  "deterministic": false,
+  "verbose": false
+}
+```
+
+### Getting started adding your own bot
 
 1. Get a [Firebase account](https://firebase.google.com).
 2. Install the firebase cli `npm install -g firebase-tools`

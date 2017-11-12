@@ -1,11 +1,21 @@
 {
   "hosting": {
     "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "/client/**",
+      "/server/**"
+    ],
     "rewrites": [
       {
         "source": "**",
-        "function": "app"
+        "function": "teebot"
       }
     ]
+  },
+  "database": {
+    "rules": "database.rules.json"
   }
 }

@@ -1,0 +1,50 @@
+{
+  "name": "firebase-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack",
+    "clean": "rm -rf functions/src && rm -rf public",
+    "build:server": "babel server/index.js -o functions/index.js && babel server/teebot.js -o functions/teebot.js && babel server/configModel.js -o functions/configModel.js",
+    "build:client": "babel client -d functions/client",
+    "copy-assets": "copyfiles index.html out functions",
+    "build": "npm run clean && npm run webpack && npm run build:server && npm run build:client && npm run copy-assets",
+    "serve": "node_modules/.bin/firebase serve --only functions,hosting --port 7070",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RikuVan/firebase-teebot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RikuVan/firebase-teebot/issues"
+  },
+  "homepage": "https://github.com/RikuVan/firebase-teebot#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "copyfiles": "^1.2.0",
+    "css-loader": "^0.28.7",
+    "express": "^4.16.2",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "firebase-admin": "^5.4.3",
+    "firebase-functions": "^0.7.2",
+    "firebase-tools": "^3.14.0",
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {
+    "firebase": "^4.6.2",
+    "preact": "^8.2.6",
+    "preact-render-to-string": "^3.7.0"
+  }
+}
